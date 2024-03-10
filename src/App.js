@@ -14,7 +14,7 @@ import { Stack, Container } from '@mui/material';
 function App() {
   const [cartCount, setCartCount] = useState(0); // State to hold the cart count
   const [searchTerm, setSearchTerm] = useState('');
-  const [filters, setFilters] = useState({ gender: [], color: [], type:[], price: [0, 500] });
+  const [filters, setFilters] = useState({ gender: [], color: [], type: [], price: [0, 500] });
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
 
@@ -38,7 +38,7 @@ function App() {
   };
 
   const clearFilters = () => {
-    setFilters({ gender: [], color: [], type: [] , price: [0, 500] });
+    setFilters({ gender: [], color: [], type: [], price: [0, 500] });
   };
 
 
@@ -46,23 +46,46 @@ function App() {
 
   return (
     <>
+   
       <Helmet>
         <title>Product</title>
         <meta name="description" content="Products lisiting page" />
         <link rel="icon" href="./assets/images/logo.jpg" />
       </Helmet>
+
       <Header cartCount={cartCount} />
       <Container maxWidth={900} sx={{ margin: '0 auto' }}>
         <Spacer height='30px' />
-        <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} toggleSidebar={toggleSidebar} filters={filters} setFilters={setFilters} handleFilterChange={handleFilterChange} />
+
+        <SearchBox
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          toggleSidebar={toggleSidebar}
+          filters={filters}
+          setFilters={setFilters}
+          handleFilterChange={handleFilterChange}
+        />
         <Spacer height='40px' />
+
         <Stack direction="row" spacing={3}>
-          <Sidebar filters={filters} setFilters={setFilters} handleFilterChange={handleFilterChange} isOpen={isSidebarOpen} clearFilters={clearFilters} />
-          <Product searchTerm={searchTerm} onAddToCart={handleAddToCart} onRemoveFromCart={handleRemoveFromCart} filters={filters} />
+
+          <Sidebar
+            filters={filters}
+            setFilters={setFilters}
+            handleFilterChange={handleFilterChange}
+            isOpen={isSidebarOpen}
+            clearFilters={clearFilters} />
+
+          <Product
+            searchTerm={searchTerm}
+            onAddToCart={handleAddToCart}
+            onRemoveFromCart={handleRemoveFromCart}
+            filters={filters} />
+
         </Stack>
-        {/* <ProductFilter filters={filters} setFilters={setFilters} handleFilterChange={handleFilterChange}  /> */}
+        
       </Container>
-      <Spacer height='40px'  />
+      <Spacer height='40px' />
       <Footer />
     </>
   );

@@ -26,7 +26,7 @@ const ProductFilter = ({ filters, setFilters, isOpen, onClose }) => {
     if (index !== -1) {    // If the value is already included, remove it from the array
       updatedFilters[type].splice(index, 1);
     } else {
-      updatedFilters[type].push(value);                               
+      updatedFilters[type].push(value);                               // Otherwise, add it to the array
     }
 
     if (type === 'price') {
@@ -57,21 +57,27 @@ const ProductFilter = ({ filters, setFilters, isOpen, onClose }) => {
       sx={{
         padding: "20px",
         display: isOpen ? 'block' : 'none', // Show/hide based on isOpen prop
+        paddingRight:"0px",
+        marginTop:"20px"
       }}
     >
-
-      <Container sx={{ mx: 'auto' }}>
-        <Box className='fieldset-container  product-filter'
+      <Box className='close-icon'
         >
           <Button onClick={onClose}
+            className='product-filter-action'
             sx={{
               color: '#000',
               textAlign: 'center',
-              float: 'right'
+              float:"inline-end",
+              paddingRight:"0px"
+
             }}>
             <CloseIcon />
           </Button>
         </Box>
+
+      <Container sx={{ mx: 'auto' }}>
+        
 
         <Grid container spacing={2}
 
