@@ -1,12 +1,8 @@
 
   /* entire website have a same font-family*/
-
-
 * {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-}
-
-  
+} 
   /* This is filter component*/
 .paper-component {
   height: max-content;
@@ -16,7 +12,6 @@
   padding: 20px 40px;
 }
 
-  
   /* Responsive fixes for filter component*/
 @media(max-width:900px) {
   .paper-component .fieldset-container {
@@ -28,11 +23,13 @@
   }
 
 }
+/* Card */
 
 /*  for icons in  Search component */
 .css-1mqe8yg-MuiCardContent-root:last-child {
   padding-bottom: 18px !important;
 }
+
 
 @media (min-width: 900px) and (max-width: 1200px) {
   .product-grid .add-to-cart-btn {
@@ -47,7 +44,6 @@
   .product-grid .price {
     font-size: 14px;
   }
-
   .css-1mqe8yg-MuiCardContent-root:last-child {
     padding-bottom: 16px !important;
   }
