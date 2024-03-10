@@ -18,8 +18,7 @@ const SearchBox = ({ searchTerm, setSearchTerm, filters, setFilters, handleFilte
 
   const handleSearch = () => {
     console.log('Searching for:', searchTerm);
-    // You can perform additional search-related actions here if needed
-  };
+   };
 
   // Toggle sidebar visibility
   const toggleSidebar = () => {

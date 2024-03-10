@@ -12,10 +12,39 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Sidebar = ({ filters, setFilters, isOpen, onClose }) => {
+const ProductFilter = ({ filters, setFilters, isOpen, onClose }) => {
+
   const handleFilterChange = (type, value) => {
-    setFilters({ ...filters, [type]: value });
+    const updatedFilters = { ...filters };
+
+    if (!updatedFilters[type]) {   // Ensure that the filters[type] array is initialized                            
+      updatedFilters[type] = [];
+    }
+
+    const index = updatedFilters[type].indexOf(value);// Check if the value is already included in the filters
+
+    if (index !== -1) {    // If the value is already included, remove it from the array
+      updatedFilters[type].splice(index, 1);
+    } else {
+      updatedFilters[type].push(value);                               
+    }
+
+    if (type === 'price') {
+
+      const priceString = value.join(',');
+      const existingPriceString = updatedFilters[type].join(',');
+
+      // Toggle price range filter
+      if (existingPriceString === priceString) {
+        updatedFilters[type] = [];
+      } else {
+        updatedFilters[type] = value;
+      }
+    }
+
+    setFilters(updatedFilters);
   };
+
 
   const clearFilters = () => {
     setFilters({ gender: [], color: [], price: [0, 500], type: [] });
@@ -45,7 +74,7 @@ const Sidebar = ({ filters, setFilters, isOpen, onClose }) => {
         </Box>
 
         <Grid container spacing={2}
-         
+
         >
           {/* Gender */}
           <Grid item xs={12} sm={6} md={3} className='product-grid-feature'>
@@ -60,12 +89,14 @@ const Sidebar = ({ filters, setFilters, isOpen, onClose }) => {
               </Typography>
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox checked={(filters.gender || []).includes('Men')} 
-                  onChange={() => handleFilterChange('gender', ['Men', ...(filters.gender || []).filter(g => g !== 'Men')])} />}
+                  control={
+                    <Checkbox checked={(filters.gender || []).includes('Men')}
+                      onChange={() => handleFilterChange('gender', 'Men')} />}
                   label="Men"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={(filters.gender || []).includes('Women')} onChange={() => handleFilterChange('gender', ['Women', ...(filters.gender || []).filter(g => g !== 'Women')])} />}
+                  control={<Checkbox checked={(filters.gender || []).includes('Women')}
+                    onChange={() => handleFilterChange('gender', 'Women')} />}
                   label="Women"
                 />
               </FormGroup>
@@ -84,18 +115,21 @@ const Sidebar = ({ filters, setFilters, isOpen, onClose }) => {
               </Typography>
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox checked={(filters.price || [])[0] === 0 && (filters.price || [])[1] === 250}
-                    onChange={() => handleFilterChange('price', [0, 250])} />}
+                  control={
+                    <Checkbox checked={(filters.price || [])[0] === 0 && (filters.price || [])[1] === 250}
+                      onChange={() => handleFilterChange('price', [0, 250])} />}
                   label="0 - ₹250"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={(filters.price || [])[0] === 251 && (filters.price || [])[1] === 450}
-                    onChange={() => handleFilterChange('price', [251, 450])} />}
+                  control={
+                    <Checkbox checked={(filters.price || [])[0] === 251 && (filters.price || [])[1] === 450}
+                      onChange={() => handleFilterChange('price', [251, 450])} />}
                   label="₹251 - ₹450"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={(filters.price || [])[0] === 451 && (filters.price || [])[1] === 500}
-                    onChange={() => handleFilterChange('price', [451, 500])} />}
+                  control={
+                    <Checkbox checked={(filters.price || [])[0] === 451 && (filters.price || [])[1] === 500}
+                      onChange={() => handleFilterChange('price', [451, 500])} />}
                   label="₹451 - ₹500"
                 />
               </FormGroup>
@@ -113,12 +147,11 @@ const Sidebar = ({ filters, setFilters, isOpen, onClose }) => {
               >Type
               </Typography>
               <FormGroup>
-                {['Polo', 'Hoodie', 'Round', 'Basic'].map(type => (
+                {['Polo', 'Basic', 'Hoodie', 'Round'].map(type => (
                   <FormControlLabel
                     key={type}
                     control={<Checkbox checked={(filters.type || []).includes(type)}
-                      onChange={() => handleFilterChange('type', [type, ...(filters.type || []).filter(e => e !== type)])}
-                    />}
+                      onChange={() => handleFilterChange('type', type)} />}
                     label={type}
                   />
                 ))}
@@ -142,9 +175,7 @@ const Sidebar = ({ filters, setFilters, isOpen, onClose }) => {
                   <FormControlLabel
                     key={color}
                     control={<Checkbox checked={(filters.color || []).includes(color)}
-                      onChange={() =>
-                        handleFilterChange('color', [color, ...(filters.color || []).filter(c => c !== color)])}
-                    />}
+                      onChange={() => handleFilterChange('color', color)} />}
                     label={color}
                   />
                 ))}
@@ -178,4 +209,4 @@ const Sidebar = ({ filters, setFilters, isOpen, onClose }) => {
   );
 };
 
-export default Sidebar;
+export default ProductFilter;

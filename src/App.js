@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Helmet } from 'react-helmet';
 import Header from '../src/components/Header/index';
 import SearchBox from '../src/components/Search/index';
 import Spacer from '../src/components/Spacer/index';
@@ -13,7 +14,7 @@ import { Stack, Container } from '@mui/material';
 function App() {
   const [cartCount, setCartCount] = useState(0); // State to hold the cart count
   const [searchTerm, setSearchTerm] = useState('');
-  const [filters, setFilters] = useState({ gender: [], color: [], price: [0, 500] });
+  const [filters, setFilters] = useState({ gender: [], color: [], type:[], price: [0, 500] });
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
 
@@ -37,7 +38,7 @@ function App() {
   };
 
   const clearFilters = () => {
-    setFilters({ gender: [], color: [], price: [0, 500], type: [] });
+    setFilters({ gender: [], color: [], type: [] , price: [0, 500] });
   };
 
 
@@ -45,6 +46,11 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <title>Product</title>
+        <meta name="description" content="Products lisiting page" />
+        <link rel="icon" href="./assets/images/logo.jpg" />
+      </Helmet>
       <Header cartCount={cartCount} />
       <Container maxWidth={900} sx={{ margin: '0 auto' }}>
         <Spacer height='30px' />

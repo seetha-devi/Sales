@@ -12,20 +12,45 @@ import {
 } from '@mui/material';
 
 const Sidebar = ({ filters, setFilters }) => {
-
-  const isLgScreen = useMediaQuery('(min-width: 1280px)'); // Define the lg screen size
+  const isLgScreen = useMediaQuery('(min-width: 1280px)'); 
 
   const handleFilterChange = (type, value) => {
-    setFilters({ ...filters, [type]: value });
+    const updatedFilters = { ...filters };
+
+    if (!updatedFilters[type]) {      // Ensure that the filters[type] array is initialized
+      updatedFilters[type] = [];
+    }
+
+    const index = updatedFilters[type].indexOf(value);   // Check if the value is already included in the filters
+
+    if (index !== -1) {       // If the value is already included, remove it from the array
+      updatedFilters[type].splice(index, 1);
+    } else {
+      updatedFilters[type].push(value);                              
+    }
+
+    if (type === 'price') {
+
+      const priceString = value.join(',');
+      const existingPriceString = updatedFilters[type].join(',');
+
+      // Toggle price range filter
+      if (existingPriceString === priceString) {
+        updatedFilters[type] = [];
+      } else {
+        updatedFilters[type] = value;
+      }
+    }
+
+    setFilters(updatedFilters);
   };
 
   const clearFilters = () => {
-    setFilters({ gender: [], color: [], price: [0, 500], type: [] });
+    setFilters({ gender: [], color: [], type: [],price: [0, 500] });
   };
 
-  // Render the Sidebar component only on lg screens
   if (!isLgScreen) {
-    return null;                 // If not lg screen, return null to render nothing
+    return null; // If not lg screen, return null to render nothing
   }
 
   return (
@@ -37,7 +62,6 @@ const Sidebar = ({ filters, setFilters }) => {
         padding: "20px",
       }}
     >
-
       {/* Gender */}
       <Box component="div" className='fieldset-container'>
         <FormControl component="fieldset">
@@ -53,18 +77,17 @@ const Sidebar = ({ filters, setFilters }) => {
             <FormControlLabel
               control={
                 <Checkbox checked={(filters.gender || []).includes('Men')}
-                  onChange={() => handleFilterChange('gender', ['Men', ...(filters.gender || []).filter(g => g !== 'Men')])} />}
+                  onChange={() => handleFilterChange('gender', 'Men')} />}
               label="Men"
             />
             <FormControlLabel
-              control={<Checkbox checked={(filters.gender || []).includes('Women')} onChange={() => handleFilterChange('gender', ['Women', ...(filters.gender || []).filter(g => g !== 'Women')])} />}
+              control={<Checkbox checked={(filters.gender || []).includes('Women')}
+               onChange={() => handleFilterChange('gender', 'Women')} />}
               label="Women"
             />
           </FormGroup>
-
         </FormControl>
       </Box>
-
 
       {/* Color */}
       <Box component="div" className='fieldset-container'>
@@ -81,14 +104,13 @@ const Sidebar = ({ filters, setFilters }) => {
               <FormControlLabel
                 key={color}
                 control={<Checkbox checked={(filters.color || []).includes(color)}
-                  onChange={() => handleFilterChange('color', [color, ...(filters.color || []).filter(c => c !== color)])} />}
+                  onChange={() => handleFilterChange('color', color)} />}
                 label={color}
               />
             ))}
           </FormGroup>
         </FormControl>
       </Box>
-
 
       {/* Price */}
       <Box component="div" className='fieldset-container'>
@@ -134,18 +156,17 @@ const Sidebar = ({ filters, setFilters }) => {
             Type
           </Typography>
           <FormGroup>
-            {['Polo', 'Hoodie', 'Round', 'Basic'].map(type => (
+            {['Polo', 'Basic', 'Hoodie', 'Round'].map(type => (
               <FormControlLabel
                 key={type}
                 control={<Checkbox checked={(filters.type || []).includes(type)}
-                  onChange={() => handleFilterChange('type', [type, ...(filters.type || []).filter(e => e !== type)])} />}
+                  onChange={() => handleFilterChange('type', type)} />}
                 label={type}
               />
             ))}
           </FormGroup>
         </FormControl>
       </Box>
-
 
       {/* Clear button for all checked filter */}
       <Button onClick={clearFilters}
