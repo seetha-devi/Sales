@@ -1,0 +1,67 @@
+*{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+.paper-component{
+  height:max-content;
+}
+.paper-component .fieldset-container{
+  padding:20px 40px;
+}
+
+
+@media(max-width:900px){
+  .paper-component .fieldset-container{
+    padding:20px 12px!important;
+  }
+  .paper-component .fieldset-container Button{
+      margin: 0px !important;
+  }
+
+}
+
+/* Product component */
+.css-1mqe8yg-MuiCardContent-root:last-child{
+  padding-bottom: 18px !important;
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .product-grid .add-to-cart-btn
+  {
+    padding:5px 6px;
+    font-size: 12px;
+  }
+  .product-grid .product-title{
+    font-size: 12px;
+  }
+  .product-grid .price{
+    font-size: 14px;
+  }
+  .css-1mqe8yg-MuiCardContent-root:last-child{
+    padding-bottom: 16px !important;
+  }
+}
+
+/*Search component for search and filter icon*/
+@media(max-width:1025px){
+  .css-1oouftt-MuiSvgIcon-root{
+    padding:3px 5px !important;
+  }
+  .css-1ewd8x2-MuiButtonBase-root-MuiIconButton-root{
+    height:30px !important;
+    border-radius: 5px !important;
+  }
+  .css-i4bv87-MuiSvgIcon-root{
+    padding:0 2px;
+    height: 22px;
+    width: 22px;
+    
+  }
+}
+
+@media(max-width:600px){
+  .paper-component .fieldset-container .product-grid-feature{
+      text-align: left !important;
+   }
+}

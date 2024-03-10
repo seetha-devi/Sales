@@ -1,0 +1,335 @@
+    
+ [
+  {
+    "id": 1,
+    "imageURL": "./assets/images/grey-round-women.jpg",
+    "name": "Grey Round",
+    "type": "Basic",
+    "price": 300,
+    "currency": "INR",
+    "color": "Grey",
+    "gender": "Women",
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "imageURL": "./assets/images/white-round-women.jpg",
+    "name": "White Round",
+    "type": "Basic",
+    "price": 300,
+    "currency": "INR",
+    "color": "White",
+    "gender": "Women",
+    "quantity": 0
+  },
+  {
+    "id": 3,
+    "imageURL": "./assets/images/black-round-men.jpg",
+    "name": "Black Round",
+    "type": "Basic",
+    "price": 300,
+    "currency": "INR",
+    "color": "Black",
+    "gender": "Men",
+    "quantity": 7
+  },
+  {
+    "id": 4,
+    "imageURL": "./assets/images/purple-round-men.jpg",
+    "name": "Purple Round",
+    "type": "Basic",
+    "price": 300,
+    "currency": "INR",
+    "color": "Purple",
+    "gender": "Men",
+    "quantity": 1
+  },
+  {
+    "id": 5,
+    "imageURL": "./assets/images/white-round-women.jpg",
+    "name": "White Round",
+    "type": "Basic",
+    "price": 300,
+    "currency": "INR",
+    "color": "White",
+    "gender": "Men",
+    "quantity": 2
+  },
+  {
+    "id": 6,
+    "imageURL": "./assets/images/blue-round-women.jpg",
+    "name": "Blue Round",
+    "type": "Basic",
+    "price": 300,
+    "currency": "INR",
+    "color": "Blue",
+    "gender": "Women",
+    "quantity": 3
+  },
+
+    {
+      "id": 7,
+      "imageURL": "./assets/images/black-polo-men.jpg",
+      "name": "Black Polo",
+      "type": "Polo",
+      "price": 250,
+      "currency": "INR",
+      "color": "Black",
+      "gender": "Men",
+      "quantity": 3
+    },
+    {
+      "id": 8,
+      "imageURL": "./assets/images/blue-polo-women.jpg",
+      "name": "Blue Polo",
+      "type": "Polo",
+      "price": 350,
+      "currency": "INR",
+      "color": "Blue",
+      "gender": "Women",
+      "quantity": 3
+    },
+    {
+      "id": 9,
+      "imageURL": "./assets/images/pink-polo-women.jpg",
+      "name": "Pink Polo",
+      "type": "Polo",
+      "price": 350,
+      "currency": "INR",
+      "color": "Pink",
+      "gender": "Women",
+      "quantity": 6
+    },
+    {
+      "id": 10,
+      "imageURL": "./assets/images/black-hoodie-mens.jpg",
+      "name": "Black Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "Black",
+      "gender": "Men",
+      "quantity": 2
+    },
+    {
+      "id": 11,
+      "imageURL": "./assets/images/green-polo-men.jpg",
+      "name": "Green Polo",
+      "type": "Polo",
+      "price": 250,
+      "currency": "INR",
+      "color": "Green",
+      "gender": "Men",
+      "quantity": 1
+    },
+    {
+      "id": 12,
+      "imageURL": "./assets/images/green-polo-women.jpg",
+      "name": "Green Polo",
+      "type": "Polo",
+      "price": 350,
+      "currency": "INR",
+      "color": "Green",
+      "gender": "Women",
+      "quantity": 1
+    },
+    {
+      "id": 13,
+      "imageURL": "./assets/images/blue-hoodie-women.jpg",
+      "name": "Blue Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "Blue",
+      "gender": "Women",
+      "quantity": 2
+    },
+    {
+      "id": 14,
+      "imageURL": "./assets/images/black-hoodie-womens.jpg",
+      "name": "Black Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "Black",
+      "gender": "Women",
+      "quantity": 5
+    },
+    {
+      "id": 15,
+      "imageURL": "./assets/images/blue-round-men.jpg",
+      "name": "Blue Round",
+      "type": "Basic",
+      "price": 300,
+      "currency": "INR",
+      "color": "Blue",
+      "gender": "Men",
+      "quantity": 2
+    },
+    {
+      "id": 16,
+      "imageURL": "./assets/images/red-round-men.jpg",
+      "name": "Red Round",
+      "type": "Basic",
+      "price": 300,
+      "currency": "INR",
+      "color": "Red",
+      "gender": "Men",
+      "quantity": 2
+    },
+    {
+      "id": 17,
+      "imageURL": "./assets/images/grey-round-men.jpg",
+      "name": "Grey Round",
+      "type": "Basic",
+      "price": 300,
+      "currency": "INR",
+      "color": "Grey",
+      "gender": "Men",
+      "quantity": 1
+    },
+    {
+      "id": 18,
+      "imageURL": "./assets/images/purple-hoodie-women.jpg",
+      "name": "Purple Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "Purple",
+      "gender": "Women",
+      "quantity": 3
+    },
+   
+    {
+      "id": 19,
+      "imageURL": "./assets/images/yellow-hoodie-women.jpg",
+      "name": "Yellow Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "Yellow",
+      "gender": "Women",
+      "quantity": 1
+    },
+    {
+      "id": 20,
+      "imageURL": "./assets/images/white-polo-women.jpg",
+      "name": "White Polo",
+      "type": "Polo",
+      "price": 350,
+      "currency": "INR",
+      "color": "White",
+      "gender": "Women",
+      "quantity": 4
+    },
+    {
+      "id": 21,
+      "imageURL": "./assets/images/red-polo-mens.jpg",
+      "name": "Red Polo",
+      "type": "Polo",
+      "price": 250,
+      "currency": "INR",
+      "color": "Red",
+      "gender": "Men",
+      "quantity": 2
+    },
+    {
+      "id": 22,
+      "imageURL": "./assets/images/blue-hoodie-men.jpg",
+      "name": "Blue Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "Blue",
+      "gender": "Men",
+      "quantity": 0
+    },
+    {
+      "id": 23,
+      "imageURL": "./assets/images/grey-hoodie-men.jpg",
+      "name": "Grey Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "Grey",
+      "gender": "Men",
+      "quantity": 2
+    },
+    {
+      "id": 24,
+      "imageURL": "./assets/images/grey-polo-men.jpg",
+      "name": "Grey Polo",
+      "type": "Polo",
+      "price": 300,
+      "currency": "INR",
+      "color": "Grey",
+      "gender": "Men",
+      "quantity": 3
+    },
+    {
+      "id": 25,
+      "imageURL": "./assets/images/red-hoodie-mens.jpg",
+      "name": "Red Hoodie",
+      "type": "Hoodie",
+      "price": 300,
+      "currency": "INR",
+      "color": "Red",
+      "gender": "Men",
+      "quantity": 0
+    },
+    {
+      "id": 26,
+      "imageURL": "./assets/images/white-polo-men.jpg",
+      "name": "White Polo",
+      "type": "Polo",
+      "price": 300,
+      "currency": "INR",
+      "color": "White",
+      "gender": "Men",
+      "quantity": 1
+    },
+    {
+      "id": 27,
+      "imageURL": "./assets/images/white-hoodie-women.jpg",
+      "name": "White Hoodie",
+      "type": "Hoodie",
+      "price": 500,
+      "currency": "INR",
+      "color": "White",
+      "gender": "Women",
+      "quantity": 3
+    },
+    {
+      "id": 28,
+      "imageURL": "./assets/images/grey-round-men.jpg",
+      "name": "Grey Round",
+      "type": "Basic",
+      "price": 300,
+      "currency": "INR",
+      "color": "Grey",
+      "gender": "Men",
+      "quantity": 0
+    },
+    {
+      "id": 29,
+      "imageURL": "./assets/images/black-round-women.jpg",
+      "name": "Black Round",
+      "type": "Basic",
+      "price": 300,
+      "currency": "INR",
+      "color": "Black",
+      "gender": "Women",
+      "quantity": 0
+    },
+    {
+      "id": 30,
+      "imageURL": "./assets/images/black-polo-womens.jpg",
+      "name": "Black Polo",
+      "type": "Polo",
+      "price": 300,
+      "currency": "INR",
+      "color": "Black",
+      "gender": "Women",
+      "quantity": 4
+    }
+  ]
