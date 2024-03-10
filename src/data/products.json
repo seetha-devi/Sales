@@ -2,13 +2,13 @@
  [
   {
     "id": 1,
-    "imageURL": "./assets/images/grey-round-women.jpg",
+    "imageURL": "./assets/images/purple-round-men.jpg",
     "name": "Grey Round",
     "type": "Basic",
     "price": 300,
     "currency": "INR",
-    "color": "Grey",
-    "gender": "Women",
+    "color": "Purple",
+    "gender": "Men",
     "quantity": 1
   },
   {
@@ -35,13 +35,13 @@
   },
   {
     "id": 4,
-    "imageURL": "./assets/images/purple-round-men.jpg",
+    "imageURL": "./assets/images/grey-round-women.jpg",
     "name": "Purple Round",
     "type": "Basic",
     "price": 300,
     "currency": "INR",
-    "color": "Purple",
-    "gender": "Men",
+    "color": "Grey",
+    "gender": "Women",
     "quantity": 1
   },
   {
